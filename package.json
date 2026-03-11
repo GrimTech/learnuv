@@ -9,7 +9,7 @@
     "pack": "./scripts/pack.sh",
     "preinstall": "python scripts/install-dependencies.py",
     "xcode": "./gyp_learnuv.py -f xcode",
-    "ninja": "./gyp_learnuv.py -f ninja && ninja -C out/Debug $CURRENT_TARGET",
+    "ninja": "python ./gyp_learnuv.py -f ninja && ninja -C out/Debug $CURRENT_TARGET",
     "make": "./gyp_learnuv.py -f make && make -C out $CURRENT_TARGET"
   },
   "repository": {
