@@ -26,7 +26,7 @@ function getCurrentTarget() {
 
 function buildCurrentTarget(tool) {
   process.env.CURRENT_TARGET = getCurrentTarget();
-  spawn('npm', [ 'run', tool ], { stdio: 'inherit', env: process.env })
+  spawn('bun', [ 'run', tool ], { stdio: 'inherit', env: process.env })
 }
 
 if (process.argv[2] && process.argv[2].toLowerCase() === 'ninja')
@@ -36,7 +36,7 @@ if (process.argv[2] && process.argv[2].toLowerCase() === 'make')
   return buildCurrentTarget('make');
 
 if (process.argv[2] && process.argv[2].toLowerCase() === 'xcode')
-  return spawn('npm', [ 'run', 'xcode' ], { stdio: 'inherit' });
+  return spawn('bun', [ 'run', 'xcode' ], { stdio: 'inherit' });
 
 function fpath (f) {
   return path.join(__dirname, f)
